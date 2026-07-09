@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 cd ${0%\/*}
 while true; do
 list=$(find . | shuf)
 for i in $list; do
-if [[ $i != "./wp" ]]; then
+if [[ $i != "./wp" && $i != "./.git*" ]]; then
 	feh --bg-max $i
 	sleep $1
 fi
